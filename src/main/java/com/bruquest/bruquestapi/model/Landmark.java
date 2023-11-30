@@ -18,6 +18,9 @@ public class Landmark {
     @Column(name = "DESCRIPTION")
     private String description;
 
+    @Column(name = "DIFFICULTY")
+    private int difficulty;
+
     @Column(name = "LATITUDE")
     private double latitude;
 
