@@ -29,5 +29,4 @@ public class Landmark {
 
     @Column(name = "IMAGEURL")
     private String imageURL;
-
 }

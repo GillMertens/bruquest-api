@@ -1,6 +1,10 @@
 package com.bruquest.bruquestapi.service;
 
-import com.bruquest.bruquestapi.model.User;
+import com.bruquest.bruquestapi.dto.authDTO.CredentialsDTO;
+import com.bruquest.bruquestapi.dto.userDTO.UserCreateDTO;
+import com.bruquest.bruquestapi.dto.userDTO.UserDTO;
+import com.bruquest.bruquestapi.dto.userDTO.UserUpdateDTO;
+
 import java.util.List;
 
 /**
@@ -15,7 +19,7 @@ public interface UserService {
      * @param user the User entity to be created
      * @return the created User entity
      */
-    User create(User user);
+    UserDTO create(UserCreateDTO user);
 
     /**
      * Retrieves a User entity by its ID.
@@ -23,14 +27,14 @@ public interface UserService {
      * @param id the ID of the User entity to be retrieved
      * @return the retrieved User entity
      */
-    User getUserById(Long id);
+    UserDTO getUserById(Long id);
 
     /**
      * Retrieves all User entities.
      *
      * @return a list of all User entities
      */
-    List<User> getAllUsers();
+    List<UserDTO> getAllUsers();
 
     /**
      * Updates a User entity.
@@ -38,7 +42,7 @@ public interface UserService {
      * @param user the User entity to be updated
      * @return the updated User entity
      */
-    User updateUser(User user);
+    UserDTO updateUser(Long id, UserUpdateDTO userUpdateDTO);
 
     /**
      * Deletes a User entity by its ID.
@@ -46,4 +50,6 @@ public interface UserService {
      * @param id the ID of the User entity to be deleted
      */
     void deleteUser(Long id);
+
+    UserDTO login(CredentialsDTO credentialsDTO);
 }

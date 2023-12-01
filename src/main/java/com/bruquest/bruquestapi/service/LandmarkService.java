@@ -1,5 +1,8 @@
 package com.bruquest.bruquestapi.service;
 
+import com.bruquest.bruquestapi.dto.landmarkDTO.LandmarkCreateDTO;
+import com.bruquest.bruquestapi.dto.landmarkDTO.LandmarkDTO;
+import com.bruquest.bruquestapi.dto.landmarkDTO.LandmarkUpdateDTO;
 import com.bruquest.bruquestapi.model.Landmark;
 
 import java.util.List;
@@ -16,7 +19,7 @@ public interface LandmarkService {
      * @param id  The ID of the landmark to retrieve.
      * @return The landmark with the specified ID.
      */
-    Landmark getLandmarkById(Long id);
+    LandmarkDTO getLandmarkById(Long id);
 
     /**
      * Retrieves a specific landmark by its name.
@@ -24,14 +27,14 @@ public interface LandmarkService {
      * @param name  The name of the landmark to retrieve.
      * @return The landmark with the specified name.
      */
-    Landmark getLandmarkByName(String name);
+    LandmarkDTO getLandmarkByName(String name);
 
     /**
      * Retrieves all landmarks.
      *
      * @return A list of all landmarks.
      */
-    List<Landmark> getAllLandmarks();
+    List<LandmarkDTO> getAllLandmarks();
 
     /**
      * Adds a new landmark.
@@ -39,15 +42,15 @@ public interface LandmarkService {
      * @param landmark  The landmark to add.
      * @return The added landmark.
      */
-    Landmark addLandmark(Landmark landmark);
+    LandmarkDTO addLandmark(LandmarkCreateDTO landmarkDTO);
 
     /**
      * Updates a specific landmark.
      *
-     * @param landmark  The landmark with updated information.
+     * @param landmarkDTO  The landmark with updated information.
      * @return The updated landmark.
      */
-    Landmark updateLandmark(Landmark landmark);
+    LandmarkDTO updateLandmark(Long id, LandmarkUpdateDTO landmarkDTO);
 
     /**
      * Deletes a specific landmark by its ID.

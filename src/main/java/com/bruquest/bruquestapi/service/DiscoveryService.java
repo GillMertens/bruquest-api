@@ -1,5 +1,7 @@
 package com.bruquest.bruquestapi.service;
 
+import com.bruquest.bruquestapi.dto.DiscoveryDTO.DiscoveryCreateDTO;
+import com.bruquest.bruquestapi.dto.DiscoveryDTO.DiscoveryDTO;
 import com.bruquest.bruquestapi.model.Discovery;
 import com.bruquest.bruquestapi.model.Landmark;
 import com.bruquest.bruquestapi.model.User;
@@ -18,7 +20,7 @@ public interface DiscoveryService {
      * @param discovery  The discovery to add.
      * @return The added discovery.
      */
-    Discovery addDiscovery(Discovery discovery);
+    DiscoveryDTO createDiscovery(DiscoveryCreateDTO discoveryCreateDTO);
 
     /**
      * Retrieves all discoveries by a specific user.
